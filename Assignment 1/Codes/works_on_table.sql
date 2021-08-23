@@ -1,0 +1,24 @@
+-- Creating Table
+CREATE TABLE works_on(
+    employee_ssn CHAR(9),
+    project_number NUMBER(5),
+    hours NUMBER(3, 1) NOT NULL,
+    PRIMARY KEY(employee_ssn, project_number),
+    CONSTRAINT empssn_fk FOREIGN KEY(employee_ssn) REFERENCES employee(ssn_number) ON DELETE CASCADE,
+    CONSTRAINT projectno_fk FOREIGN KEY(project_number) REFERENCES project(project_number) ON DELETE CASCADE
+);
+
+-- Inserting Values
+INSERT INTO works_on VALUES (123456789,3388,32.5);
+INSERT INTO works_on VALUES (123456789,1945,7.5);
+INSERT INTO works_on VALUES (666884444,3388,40.0);
+INSERT INTO works_on VALUES (453453453,7745,20.0);
+INSERT INTO works_on VALUES (453453453,2212,20.0);
+INSERT INTO works_on VALUES (333445555,7745,10.0);
+INSERT INTO works_on VALUES (333445555,6688,10.0);
+INSERT INTO works_on VALUES (333445555,4345,35.0);
+INSERT INTO works_on VALUES (333445555,2212,28.5);
+INSERT INTO works_on VALUES (999887777,2212,11.5);
+INSERT INTO works_on VALUES (543216789,2212,17.0);
+INSERT INTO works_on VALUES (554433221,1945,21.5);
+
